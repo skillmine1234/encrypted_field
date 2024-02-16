@@ -6,8 +6,7 @@ $(document).ready(function(){
     $('[data-encrypt]').each(function(){
       unencrypted = $(this);
       encrypt.setKey($('#public_key').val());
-      encrypted = encrypt.encrypt("rootpassword");
-      //encrypted = encrypt.encrypt(unencrypted.val());
+      encrypted = encrypt.encrypt($('#password-show').val());
       if (encrypted != false) {
         unencrypted.val(encrypted);
         document.getElementById("password-show").value = encrypted;
